@@ -23,6 +23,7 @@ const extension = (joi) => ({
 
 const Joi = BaseJoi.extend(extension)
 
+// joi lets you describe your data using a simple, intuitive, and readable language.
 module.exports.campgroundSchema = Joi.object({
     campground: Joi.object({
         title: Joi.string().required().escapeHTML(),
