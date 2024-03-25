@@ -148,11 +148,12 @@ app.get('/', (req, res) => {
     res.render('home')
 });
 
-
+// if no route matches throw 404 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
 })
 
+// error handler for async catch which we wrote in catchAsync 
 app.use((err, req, res, next) => {
     const { statusCode = 500 } = err;
     if (!err.message) err.message = 'Oh No, Something Went Wrong!'
