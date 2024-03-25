@@ -132,6 +132,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // flash message types defined here 
+// currentUser is a local variable defined from req user
+// we get req.user from from callback of passport local mongoose authentication
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
