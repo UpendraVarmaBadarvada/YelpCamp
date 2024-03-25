@@ -27,8 +27,9 @@ module.exports.renderLogin = (req, res) => {
 
 module.exports.login = (req, res) => {
     req.flash('success', 'welcome back!');
+    //redirect to url before login failed once login passed 
     const redirectUrl = req.session.returnTo || '/campgrounds';
-    // delete req session var after loggedin   
+    // delete it after loggedin   
     delete req.session.returnTo;
     res.redirect(redirectUrl);
 }
