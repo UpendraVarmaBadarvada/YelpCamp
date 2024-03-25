@@ -153,7 +153,7 @@ app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
 })
 
-// error handler for async catch which we wrote in catchAsync 
+// error handler for catch on async calls of mongoose (catchAsync.js) 
 app.use((err, req, res, next) => {
     const { statusCode = 500 } = err;
     if (!err.message) err.message = 'Oh No, Something Went Wrong!'
