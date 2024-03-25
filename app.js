@@ -37,7 +37,7 @@ db.once("open", () => {
 });
 
 const app = express();
-
+// we use ejs-mate for using boilerplate code  
 app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
