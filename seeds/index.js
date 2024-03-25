@@ -10,19 +10,23 @@ mongoose.connect('mongodb://localhost:27017/yelp-camp', {
 });
 
 const db = mongoose.connection;
-
+// bind console.error fn of node to js console object 
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
     console.log("Database connected");
 });
 
+// give random descriptors and places 
 const sample = array => array[Math.floor(Math.random() * array.length)];
 
 
 const seedDB = async () => {
+    // first delete the records in Campground if any  
     await Campground.deleteMany({});
     for (let i = 0; i < 300; i++) {
+        // random cities 
         const random1000 = Math.floor(Math.random() * 1000);
+        // random price 
         const price = Math.floor(Math.random() * 20) + 10;
         const camp = new Campground({
             //YOUR USER ID
@@ -52,7 +56,7 @@ const seedDB = async () => {
         await camp.save();
     }
 }
-
+// on save close the connection 
 seedDB().then(() => {
     mongoose.connection.close();
 })
