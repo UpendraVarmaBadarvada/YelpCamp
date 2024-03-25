@@ -12,7 +12,7 @@ module.exports.isLoggedIn = (req, res, next) => {
     next();
 }
 
-// validate using JOI, if we get an error throw custom error 
+// validate req body parameters using JOI, if we get an error throw custom error 
 module.exports.validateCampground = (req, res, next) => {
     const { error } = campgroundSchema.validate(req.body);
     console.log(req.body);
