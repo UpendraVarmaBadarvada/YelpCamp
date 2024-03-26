@@ -39,6 +39,7 @@ module.exports.isAuthor = async (req, res, next) => {
 
 module.exports.isReviewAuthor = async (req, res, next) => {
     const { id, reviewId } = req.params;
+    // check if review author is current user
     const review = await Review.findById(reviewId);
     if (!review.author.equals(req.user._id)) {
         req.flash('error', 'You do not have permission to do that!');
