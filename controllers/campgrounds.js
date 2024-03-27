@@ -31,7 +31,7 @@ module.exports.createCampground = async (req, res, next) => {
 }
 
 module.exports.showCampground = async (req, res,) => {
-    // populate/show only author of reviews of a campground 
+    // populate author of reviews of a campground not author of campground 
     const campground = await Campground.findById(req.params.id).populate({
         path: 'reviews',
         populate: {
