@@ -8,6 +8,7 @@ const ImageSchema = new Schema({
     filename: String
 });
 
+// Setting virtual property using get method 
 ImageSchema.virtual('thumbnail').get(function () {
     return this.url.replace('/upload', '/upload/w_200');
 });
