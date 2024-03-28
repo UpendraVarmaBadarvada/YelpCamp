@@ -53,11 +53,11 @@ CampgroundSchema.virtual('properties.popUpMarkup').get(function () {
 
 
 
-CampgroundSchema.post('findOneAndDelete', async function (doc) {
-    if (doc) {
+CampgroundSchema.post('findOneAndDelete', async function (camp) {
+    if (camp) {
         await Review.deleteMany({
             _id: {
-                $in: doc.reviews
+                $in: camp.reviews
             }
         })
     }
