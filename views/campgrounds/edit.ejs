@@ -2,6 +2,7 @@
 <div class="row">
     <h1 class="text-center">Edit Campground</h1>
     <div class="col-md-6 offset-md-3">
+        <!--encoding type is miltipart for adding files-->
         <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" novalidate class="validated-form"
             enctype="multipart/form-data">
             <div class="mb-3">
@@ -43,6 +44,7 @@
             </div>
             <div class="mb-3">
                 <div class="form-file custom-file">
+                    <!--multiple input files-->
                     <input type="file" class="form-file-input" id="image" name="image" multiple>
                     <label class="form-file-label" for="image">
                         <span class="form-file-text custom-file-label">Add more image(s)...</span>
