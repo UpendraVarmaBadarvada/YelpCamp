@@ -9,7 +9,7 @@ const ImageSchema = new Schema({
 });
 
 // Setting virtual property using get method 
-// scale down the image for thumbnail
+// scale down the image for thumbnail by setting width with w_
 ImageSchema.virtual('thumbnail').get(function () {
     return this.url.replace('/upload', '/upload/w_200');
 });
