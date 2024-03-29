@@ -1,4 +1,5 @@
 // mapbox gl is a java script library to show mapbox style maps 
+// container is the id of div where we want to show
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
     container: 'map',
