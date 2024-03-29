@@ -77,7 +77,7 @@ map.on('load', function () {
         }
     });
 
-    // inspect a cluster on click
+    // inspect a cluster on click basically zoom 
     map.on('click', 'clusters', function (e) {
         const features = map.queryRenderedFeatures(e.point, {
             layers: ['clusters']
@@ -99,7 +99,7 @@ map.on('load', function () {
     // When a click event occurs on a feature in
     // the unclustered-point layer, open a popup at
     // the location of the feature, with
-    // description HTML from its properties.
+    // description HTML from its properties. mentioned in campground model properties.popUpMarkup virtual schema
     map.on('click', 'unclustered-point', function (e) {
         const { popUpMarkup } = e.features[0].properties;
         const coordinates = e.features[0].geometry.coordinates.slice();
