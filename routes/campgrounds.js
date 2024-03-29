@@ -12,6 +12,7 @@ const upload = multer({ storage });
 const Campground = require('../models/campground');
 
 // we use custom isLoggedIn middleware for some of the calls 
+// upload array uploads images from forms and name in the method matches input name 
 router.route('/')
     .get(catchAsync(campgrounds.index))
     .post(isLoggedIn, upload.array('image'), validateCampground, catchAsync(campgrounds.createCampground))
