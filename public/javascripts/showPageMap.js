@@ -1,3 +1,4 @@
+// mapbox gl is a java script library to show mapbox style maps 
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
     container: 'map',
@@ -6,9 +7,10 @@ const map = new mapboxgl.Map({
     zoom: 10 // starting zoom
 });
 
+// set controls 
 map.addControl(new mapboxgl.NavigationControl());
 
-
+// set markers in maps 
 new mapboxgl.Marker()
     .setLngLat(campground.geometry.coordinates)
     .setPopup(
