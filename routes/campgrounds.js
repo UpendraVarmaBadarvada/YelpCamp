@@ -5,6 +5,8 @@ const catchAsync = require('../utils/catchAsync');
 const { isLoggedIn, isAuthor, validateCampground } = require('../middleware');
 const multer = require('multer');
 const { storage } = require('../cloudinary');
+// Multer is a node.js middleware for handling multipart/form-data , which is primarily used for uploading files.
+// we store files in cloudinary
 const upload = multer({ storage });
 
 const Campground = require('../models/campground');
