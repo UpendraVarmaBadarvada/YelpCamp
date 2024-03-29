@@ -30,6 +30,7 @@
     <% }%>
 </div>
 <script>
+    // <%- is a EJS output tag to be used in script tag
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
     const campgrounds = { features: <%- JSON.stringify(campgrounds) %>}
 </script>
