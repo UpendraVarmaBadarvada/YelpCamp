@@ -21,7 +21,7 @@ const extension = (joi) => ({
     }
 });
 
-// creating a new extension to joi for adding a validation for escaping html(special charecters)
+// creating a new extension to joi for adding a validation for escaping html(special charecters) using sanitize html npm module
 const Joi = BaseJoi.extend(extension)
 
 // joi lets you describe your data using a simple, intuitive, and readable language.
