@@ -50,6 +50,8 @@ app.use(mongoSanitize({
 }))
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
 
+// use mongo db store for passport 
+// we mention when should the session be updated 
 const store = new MongoDBStore({
     url: dbUrl,
     secret,
