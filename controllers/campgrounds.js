@@ -63,6 +63,8 @@ module.exports.updateCampground = async (req, res) => {
     const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
     campground.images.push(...imgs);
     await campground.save();
+    // checkbox can be an aray 
+    // if req body has deleteImage then delete from cloudinary 
     if (req.body.deleteImages) {
         for (let filename of req.body.deleteImages) {
             await cloudinary.uploader.destroy(filename);
