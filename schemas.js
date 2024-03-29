@@ -1,6 +1,7 @@
 const BaseJoi = require('joi');
 const sanitizeHtml = require('sanitize-html');
 
+// this extension uses html sanitizer to check if value if sanitized if not returns an error or else returns the value 
 const extension = (joi) => ({
     type: 'string',
     base: joi.string(),
