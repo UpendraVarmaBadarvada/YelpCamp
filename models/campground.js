@@ -15,6 +15,7 @@ ImageSchema.virtual('thumbnail').get(function () {
 });
 
 // it includes virtuals in JSON
+// when you convert a mongo document to JSON
 const opts = { toJSON: { virtuals: true } };
 
 const CampgroundSchema = new Schema({
