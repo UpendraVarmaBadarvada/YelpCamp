@@ -78,6 +78,7 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 app.use(flash());
+// helps protect your server from some well-known web vulnerabilities by setting HTTP response headers appropriately
 app.use(helmet());
 
 
