@@ -104,6 +104,9 @@ const connectSrcUrls = [
     "https://events.mapbox.com",
 ];
 const fontSrcUrls = [];
+
+//layer of security that helps to detect and mitigate certain types of attacks, including Cross-Site Scripting (XSS) 
+//and data injection attacks
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
@@ -118,7 +121,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/douqbebwk/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://res.cloudinary.com/dktbgtn7z/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
                 "https://images.unsplash.com",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
